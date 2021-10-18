@@ -1,0 +1,34 @@
+<p-card [header]=heroe.name  [style]="{width: '360px'}" styleClass="p-card-shadow">
+  <ng-template pTemplate="header">
+      <img alt="Card" [src]=heroe.images.sm>
+  </ng-template>
+
+  <div class="card">
+    <div class="flex flex-column">
+        <div class="flex align-items-start justify-content-start">
+          <h4>Intelligence:&nbsp;</h4> {{heroe.powerstats.intelligence}}
+        </div>
+        <div class="flex align-items-start justify-content-start">
+          <h4>Speed:&nbsp;</h4> {{heroe.powerstats.speed}}
+        </div>
+        <div class="flex align-items-start justify-content-start">
+          <h4>Power:&nbsp;</h4> {{heroe.powerstats.power}}
+        </div>
+        <div class="flex align-items-start justify-content-start">
+          <h4>Gender:&nbsp;</h4> {{heroe.appearance.gender}}
+        </div>
+        <div class="flex align-items-start justify-content-start">
+          <h4>Race:&nbsp;</h4> {{heroe.appearance.race}}
+        </div>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <ng-container *ngIf="isList == true; then thenTemplate; else elseTemplate"></ng-container>
+    <ng-template #thenTemplate>
+      <button pButton style="width: 100%;" label="More Details..." icon="pi pi-check" routerLink="/heroes/details/{{heroe.id}}"></button>
+    </ng-template>
+    <ng-template #elseTemplate>
+      <button pButton style="width: 100%;" label="Back List" class="p-button-danger" icon="pi pi-arrow-left" routerLink="/heroes/list"></button>
+    </ng-template>
+  </ng-template>
+</p-card>

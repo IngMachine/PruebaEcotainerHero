@@ -1,0 +1,24 @@
+<div class="flex justify-content-center flex-wrap mb-6">
+  <div class="flex align-items-center justify-content-center w-4rem h-4rem">
+    <form>
+      <span class="p-float-label p-input-icon-right shadow-5">
+        <i class="pi pi-search"></i>
+        <input id="float-input" type="text" pInputText style="width: 700px;" (keyup.enter)="searchHeroe(searchText.value)" #searchText >
+        <label for="float-input">Search Heroe (Press ENTER)</label>
+      </span>
+    </form>
+  </div>
+</div>
+
+
+<div class="grid">
+  <div class="col-4" *ngFor="let heroe of heroesList">
+    <app-card [heroe]=heroe></app-card>
+  </div>
+</div>
+
+<nz-result nzStatus="warning" nzTitle="There is no hero with the search term you just entered." *ngIf="noHero">
+  <div nz-result-extra>
+    <button pButton pRipple type="button" label="Find another hero" (click)="refresh()" class="p-button-raised p-button-text"></button>
+  </div>
+</nz-result>

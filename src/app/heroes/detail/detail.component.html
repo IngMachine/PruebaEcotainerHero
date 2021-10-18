@@ -1,0 +1,51 @@
+<div class="grid">
+  <div class="flex flex-row justify-content-start flex-wrap card-container blue-container">
+      <div class="flex align-items-center justify-content-center m-3 col-3">
+        <app-card *ngIf="heroe!= null" [heroe]=heroe></app-card>
+      </div>
+      <div class="flex align-items-center justify-content-center mr-3 col">
+        <div class="grid">
+          <div class="col-12">
+            <p-fieldset legend="Appearance">
+              <nz-list nzBordered nzSize="small" >
+                <nz-list-item>Gender: {{ appearance.gender }}</nz-list-item>
+                <nz-list-item>Race: {{ appearance.race }}</nz-list-item>
+                <nz-list-item>Height: {{ appearance.height[1] }}</nz-list-item>
+                <nz-list-item>Weight: {{ appearance.weight[1] }}</nz-list-item>
+                <nz-list-item>Eye Color: {{ appearance.eyeColor }}</nz-list-item>
+                <nz-list-item>hairColor: {{ appearance.hairColor }}</nz-list-item>
+              </nz-list>
+            </p-fieldset>
+          </div>
+          <div class="col-12">
+            <p-fieldset legend="Biography">
+              <nz-list nzBordered nzSize="small" >
+                <nz-list-item>Full Name: {{ biography.fullName }}</nz-list-item>
+                <nz-list-item>Alter Egos: {{ biography.alterEgos }}</nz-list-item>
+                <nz-list-item>Aliases: {{ biography.aliases[0] }}</nz-list-item>
+                <nz-list-item>Place Of Birth: {{ biography.placeOfBirth }}</nz-list-item>
+                <nz-list-item>First Appearance: {{ biography.firstAppearance }}</nz-list-item>
+                <nz-list-item>Publisher: {{ biography.publisher }}</nz-list-item>
+              </nz-list>
+            </p-fieldset>
+          </div>
+          <div class="col-12">
+            <p-fieldset legend="Work">
+              <nz-list nzBordered nzSize="small" >
+                <nz-list-item>Occupation: {{ work.occupation }}</nz-list-item>
+                <nz-list-item>Base: {{ work.base }}</nz-list-item>
+              </nz-list>
+            </p-fieldset>
+          </div>
+          <div class="col-12">
+            <p-fieldset legend="Connections">
+              <nz-list nzBordered nzSize="small" >
+                <nz-list-item>Group Affiliation: {{ connections.groupAffiliation }}</nz-list-item>
+                <nz-list-item>Relatives: {{ connections.relatives }}</nz-list-item>
+              </nz-list>
+            </p-fieldset>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
