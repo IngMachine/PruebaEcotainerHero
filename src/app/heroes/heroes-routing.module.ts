@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: Error404Component
+    redirectTo: 'list'
   }
 ];
 

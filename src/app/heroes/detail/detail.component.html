@@ -7,7 +7,7 @@
         <div class="grid">
           <div class="col-12">
             <p-fieldset legend="Appearance">
-              <nz-list nzBordered nzSize="small" >
+              <nz-list nzBordered nzSize="small" *ngIf="appearance != null" >
                 <nz-list-item>Gender: {{ appearance.gender }}</nz-list-item>
                 <nz-list-item>Race: {{ appearance.race }}</nz-list-item>
                 <nz-list-item>Height: {{ appearance.height[1] }}</nz-list-item>
@@ -19,7 +19,7 @@
           </div>
           <div class="col-12">
             <p-fieldset legend="Biography">
-              <nz-list nzBordered nzSize="small" >
+              <nz-list nzBordered nzSize="small" *ngIf="biography != null" >
                 <nz-list-item>Full Name: {{ biography.fullName }}</nz-list-item>
                 <nz-list-item>Alter Egos: {{ biography.alterEgos }}</nz-list-item>
                 <nz-list-item>Aliases: {{ biography.aliases[0] }}</nz-list-item>
@@ -31,14 +31,14 @@
           </div>
           <div class="col-12">
             <p-fieldset legend="Work">
-              <nz-list nzBordered nzSize="small" >
+              <nz-list nzBordered nzSize="small" *ngIf="work != null" >
                 <nz-list-item>Occupation: {{ work.occupation }}</nz-list-item>
                 <nz-list-item>Base: {{ work.base }}</nz-list-item>
               </nz-list>
             </p-fieldset>
           </div>
           <div class="col-12">
-            <p-fieldset legend="Connections">
+            <p-fieldset legend="Connections" *ngIf="connections != null">
               <nz-list nzBordered nzSize="small" >
                 <nz-list-item>Group Affiliation: {{ connections.groupAffiliation }}</nz-list-item>
                 <nz-list-item>Relatives: {{ connections.relatives }}</nz-list-item>
